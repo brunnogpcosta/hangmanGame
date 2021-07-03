@@ -1,4 +1,6 @@
-password = "arroz"
+import tratamento_de_arquivo
+
+password = tratamento_de_arquivo.sort_password()
 array_de_tracos = []
 string_array = ''
 tentativas = 6
@@ -9,9 +11,10 @@ palavra_iteirada = ''
 encerrou = False
 vencedor = False
 
+
 print("#################################")
 print("######### JOGO DA FORCA #########")
-print("################################\n")
+print("#################################\n")
 
 
 print("Adivinhe a palavra abaixo: \n")
