@@ -3,13 +3,66 @@ import tratamento_de_arquivo
 password = tratamento_de_arquivo.sort_password()
 array_de_tracos = []
 string_array = ''
-tentativas = 6
+tentativas = 7
 letras_digitadas = []
 
 palavra_iteirada = ''
 
 encerrou = False
 vencedor = False
+
+
+
+def desenha_forca(tentativas):
+    print("  _______     ")
+    print(" |/      |    ")
+
+    if(tentativas == 7):
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+
+    if(tentativas == 6):
+        print(" |      (_)   ")
+        print(" |      \     ")
+        print(" |            ")
+        print(" |            ")
+
+    if(tentativas== 5):
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+
+    if(tentativas == 4):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+
+    if(tentativas == 3):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(tentativas == 2):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    if (tentativas == 1):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+
+    print(" |            ")
+    print("_|___         ")
+    print()
+
 
 
 print("#################################")
@@ -31,10 +84,6 @@ while not encerrou and not vencedor:
 
     normalize_letter = letter.lower().strip()
 
-
-
-
-
     if password.find(normalize_letter) < 0:
         tentativas = tentativas - 1
         letras_digitadas.append(normalize_letter.upper())
@@ -48,7 +97,7 @@ while not encerrou and not vencedor:
                 array_de_tracos[i] = " " + letter.upper() + " "
             i += 1
 
-    print("")
+    desenha_forca(tentativas)
     print(string_array.join(array_de_tracos), '\n')
 
     try:
@@ -58,12 +107,16 @@ while not encerrou and not vencedor:
 
     if(tentativas == 0):
       encerrou = True
-      print('#######################')
-      print('##### GAMER OVER ######')
-      print('#######################')
+      print('########################')
+      print('###### GAMER OVER ######')
+      print('########################')
 
     if (vencedor == True):
         encerrou = True
         print('#######################')
         print('##### VOCÊ VENCEU #####')
         print('#######################')
+
+
+
+
